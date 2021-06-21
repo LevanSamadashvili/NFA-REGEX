@@ -1,5 +1,6 @@
 # NFA-REGEX
 REGEX-NFA converter and NFA simulator
+This is the demonstration of the fact that REGEX has equals computational power as NFA.
 
 ## Description
 This project consists of two parts:
