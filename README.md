@@ -29,9 +29,13 @@ If these don't run, just compile source files in Src with g++ and run.
 - operators: "|"(Union), "*"(Star operation), and concatenation (ab is concatenation of a and b)
 - () in input means EPSILON symbol in Regex
 
+Example 1:
 ```console
-Example 1: (a|b)*(c|())
-Example 2: (ab*c(0|1)*)*
+(a|b)*(c|())
+```
+Example 2:
+```console
+(ab*c(0|1)*)*
 ```
 
 ##### Output Format
@@ -47,14 +51,17 @@ the number of transitions from state i, and transitions from state i
 transition is SYMBOL and STATE to where the transition goes
 
 Possible outputs for examples in input:
-```console
+
 Example 1:
+```console
 2 2 3
 0 1
 3 a 0 b 0 c 1
 0
+```
 
 Example 2:
+```console
 3 2 6
 0 2
 1 a 1
@@ -67,15 +74,17 @@ Example 2:
 On the first line you are given a word (basically a string of characters)
 On the next lines you are given an NFA (same input format as First Part)
 
-```console
 Example 1:
+```console
 aababacab
 2 2 3
 0 1
 3 a 0 b 0 c 1
 0
+```
 
 Example 2:
+```console
 abbc1acabbbbc001cabc
 3 2 6
 0 2
@@ -90,10 +99,13 @@ You should output the string of 'Y'-s and 'N'-s,
 - 'N' on the i-th index means that none of NFA-s current states were accept states after reading i-th symbol from the input
 
 Outputs for examples in input:
-```console
+
 Example 1:
+```console
 YYYYYYYNN
+```
 
 Example 2:
+```console
 NNNYYNYNNNNNYYYYNNNN
 ```
