@@ -3,8 +3,8 @@ REGEX-NFA converter and NFA simulator
 
 ## Description
 This project consists of two parts:
-1) Converts **Regex**(Regular Expression) to **NFA**(Nondeterministic Finite Automaton)
-2) Simulates given NFA on given word
+1) **build.cpp**: Converts **Regex**(Regular Expression) to **NFA**(Nondeterministic Finite Automaton)
+2) **run.cpp**:   Simulates given NFA on given word
 
 ## Run
 #### Windows
@@ -19,12 +19,15 @@ You might need chmod +x command to make build.sh and run.sh executables
 ./run.sh
 ```
 
+If these don't run, just compile codes in Src with g++ and run.
+
 ## Details
 
 ### First Part (Regex->NFA)
 ##### Input Format
-You are given a regular expression, consisting of ()-braces, lowercase english letters and digits,
-operators: "|" , "*", and concatenation (ab is concatenation of a and b)
+- You are given a regular expression, consisting of ()-braces, lowercase english letters and digits,
+- operators: "|"(Union), "*"(Star operation), and concatenation (ab is concatenation of a and b)
+- () in input means EPSILON symbol in Regex
 
 ```console
 Example 1: (a|b)*(c|())
@@ -34,16 +37,16 @@ Example 2: (ab*c(0|1)*)*
 ##### Output Format
 You should output on the first line numbers: n, a, t.
 States are numbered from 0 to n - 1
-n - Number of states in resulting NFA;
-a - Number of accepting states in resulting NFA;
-t - Number of transitions in resulting NFA;
+- n - Number of states in resulting NFA;
+- a - Number of accepting states in resulting NFA;
+- t - Number of transitions in resulting NFA;
 
-On the second line you should output the accepting states (each is between 0 and n - 1 inclusive).
-On the next n lines, for line i (0 <= i < n) you should output 
+- On the second line you should output the accepting states (each is between 0 and n - 1 inclusive).
+- On the next n lines, for line i (0 <= i < n) you should output 
 the number of transitions from state i, and transitions from state i
 transition is SYMBOL and STATE to where the transition goes
 
-Possible outputs for examples in input
+Possible outputs for examples in input:
 ```console
 Example 1:
 2 2 3
@@ -60,3 +63,37 @@ Example 2:
 ```
 
 ### Second Part (NFA simulation)
+##### Input Format
+On the first line you are given a word (basically a string of characters)
+On the next lines you are given an NFA (same input format as First Part)
+
+```console
+Example 1:
+aababacab
+2 2 3
+0 1
+3 a 0 b 0 c 1
+0
+
+Example 2:
+abbc1acabbbbc001cabc
+3 2 6
+0 2
+1 a 1
+2 b 1 c 2
+3 0 2 1 2 a 1
+```
+
+##### Output Format
+You should output the string of 'Y'-s and 'N'-s,
+- 'Y' on the i-th index means that NFA was in an accept state after reading i-th symbol from the input
+- 'N' on the i-th index means that none of NFA-s current states were accept states after reading i-th symbol from the input
+
+Outputs for examples in input:
+```console
+Example 1:
+YYYYYYYNN
+
+Example 2:
+NNNYYNYNNNNNYYYYNNNN
+```
