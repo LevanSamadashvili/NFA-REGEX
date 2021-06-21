@@ -26,7 +26,7 @@ If these don't run, just compile source files in Src with g++ and run.
 ### First Part (Regex->NFA)
 ##### Input Format
 - You are given a regular expression, consisting of ()-braces, lowercase english letters and digits,
-- operators: "|"(**Union**), "*"(**Star** operation), and **concatenation** (ab is concatenation of a and b)
+- operators: "|"(**Union**), "*"(**Star** operation), and **Concatenation** (ab is concatenation of a and b)
 - () in input means **EPSILON** symbol in Regex
 
 Example 1:
