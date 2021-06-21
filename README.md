@@ -1,10 +1,10 @@
 # NFA-REGEX
-REGEX-NFA converter and NFA simulator
-This is the demonstration of the fact that REGEX has equals computational power as NFA.
+- REGEX-NFA converter and NFA simulator.
+- This is the demonstration of the fact that REGEX has equal computational power as NFA.
 
 ## Description
-This project consists of two parts:
-1) **build.cpp**: Converts **Regex**(Regular Expression) to **NFA**(Nondeterministic Finite Automaton)
+The project consists of two parts:
+1) **build.cpp**: Converts **Regex**(Regular Expression) to equivalent **NFA**(Nondeterministic Finite Automaton)
 2) **run.cpp**:   Simulates given NFA on given word
 
 ## Run
@@ -20,10 +20,9 @@ You might need chmod +x command to make build.sh and run.sh executables
 ./run.sh
 ```
 
-If these don't run, just compile codes in Src with g++ and run.
+If these don't run, just compile source files in Src with g++ and run.
 
 ## Details
-
 ### First Part (Regex->NFA)
 ##### Input Format
 - You are given a regular expression, consisting of ()-braces, lowercase english letters and digits,
