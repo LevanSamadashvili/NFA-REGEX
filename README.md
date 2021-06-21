@@ -41,7 +41,7 @@ Example 2:
 ##### Output Format
 You should output on the first line numbers: n, a, t.
 States are numbered from 0 to n - 1
-- n - Number of states in resulting NFA;
+- n - Number of states in resulting NFA, n should be at most regex.length() + 1 
 - a - Number of accepting states in resulting NFA;
 - t - Number of transitions in resulting NFA;
 
